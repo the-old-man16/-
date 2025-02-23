@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        /* ทำให้ body ใช้ flexbox layout */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        /* ทำให้ content ขยายเต็มหน้าจอ */
+        .content {
+            flex: 1;
+        }
+        /* ทำให้ footer อยู่ล่างสุดเสมอ */
+        footer {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="{{url_for('home')}}" class="brand-logo right">I-TECH NPU COFFE</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="{{url_for('home')}}">Home</a></li>
+                <li><a href="{{url_for('admin')}}">ติดต่อแอดมิน</a></li>
+                <li><a href="{{url_for('login')}}">login</a></li>
+                <li><a href="{{url_for('menu')}}">menu</a></li>
+                <li><a href="{{url_for('bill')}}">list order</a></li>
+                <li><a href="{{url_for('order')}}">order</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Welcome</h5>
+                    <p class="grey-text text-lighten-4">สวัสดีค่ะคุณลูกค้าทุกๆท่านยินดีต้อนรับสู่ร้านกาแฟของเราค่ะ</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Contract</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Instagrame</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Line</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Google</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 คณะเทคโนโลยีอุตสาหกรรรม
+                <a class="grey-text text-lighten-4 right" href="#!">ขอขอบคุณทุกการสนับสนุนค่ะ</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

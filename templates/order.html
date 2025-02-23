@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}
+ออเดอร์
+{% endblock %}
+
+{% block content %}
+<div class="row" style="padding:20px">
+    <h5 class="center-align">สั่งออเดอร์</h5>
+    <form action="">
+        <input type="text" name="Name" placeholder="ชื่อลูกค้า">
+        <input type="text" name="Menu" placeholder="เมนูที่สั่ง">
+        <input type="number" name="Order" placeholder="จำนวนที่สั่ง">
+        <input type="text" name="Notes" placeholder="แจ้งรายละเอียดเพิ่มเติมที่ลูกค้าต้องการ">
+        <button class="btn">สั่ง</button>
+    </form>
+</div>
+{% endblock %}

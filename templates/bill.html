@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %}
+รายการสั่งอาหาร
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <h5 class="center-align">รายการสั่งซื้อ</h5>
+
+  <table class="striped centered">
+    <thead>
+      <tr>
+          <th>ชื่อ</th>
+          <th>เมนูที่สั่ง</th>
+          <th>จำนวนออเดอร์</th>
+          <th>หมายเหตุเพิ่มเติม</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in data %}
+      <tr>
+        <td>{{i["ชื่อ"]}}</td>
+        <td>{{i["เมนูที่สั่ง"]}}</td>
+        <td>{{i["จำนวน"]}}</td>
+        <td>{{i["ราคา"]}}</td>
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock %}
